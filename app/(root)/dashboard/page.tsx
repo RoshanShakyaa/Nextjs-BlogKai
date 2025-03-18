@@ -41,7 +41,7 @@ async function BlogPosts() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  const data = await getData(user.id);
+  const data = await getData(user?.id);
 
   if (!user) {
     return redirect("/api/auth/register");
